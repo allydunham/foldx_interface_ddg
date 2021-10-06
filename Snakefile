@@ -6,7 +6,7 @@ import os
 localrules:
     all, complex_variants, complex_combine
 
-COMPLEXES = [i for i in os.listdir('data/complex') if os.path.isdir(f'data/complex/{i}')]
+COMPLEXES = [i for i in os.listdir('data/complex') if os.path.isdir(f'data/complex/{i}') and os.path.isfile(f'data/complex/{i}/model.pdb') and os.path.isfile(f'data/complex/{i}/individual_list')]
 
 rule all:
     """
@@ -65,7 +65,7 @@ rule complex_mutant_models:
     Generate PDBs with each mutation in the interface using FoldX BuildModel
     """
     input:
-        muts='data/complex/{complex}/{interface}/individual_list',
+        muts='data/complex/{complex}/individual_list',
         pdb='data/complex/{complex}/model_Repair.pdb'
 
     output:
