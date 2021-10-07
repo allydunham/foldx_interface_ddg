@@ -65,7 +65,7 @@ rule complex_mutant_models:
     Generate PDBs with each mutation in the interface using FoldX BuildModel
     """
     input:
-        muts='data/complex/{complex}/individual_list',
+        muts='data/complex/{complex}/{interface}/individual_list',
         pdb='data/complex/{complex}/model_Repair.pdb'
 
     output:
