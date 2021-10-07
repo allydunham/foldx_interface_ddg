@@ -6,9 +6,7 @@ import os
 localrules:
     all, complex_combine
 
-COMPLEXES = [i for i in os.listdir('data/complex') if os.path.isdir(f'data/complex/{i}') and os.path.isfile(f'data/complex/{i}/model.pdb') and os.path.isfile(f'data/complex/{i}/individual_list')]
-
-print(COMPLEXES)
+COMPLEXES = [i for i in os.listdir('data/complex') if os.path.isdir(f'data/complex/{i}') and os.path.isfile(f'data/complex/{i}/model.pdb') and os.path.isfile(f'data/complex/{i}/A_B/individual_list')]
 
 rule all:
     """
