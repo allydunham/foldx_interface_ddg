@@ -4,7 +4,7 @@ Calculate variant interface stability impact given a list of
 import os
 
 localrules:
-    all, complex_variants, complex_combine
+    all, complex_combine
 
 COMPLEXES = [i for i in os.listdir('data/complex') if os.path.isdir(f'data/complex/{i}') and os.path.isfile(f'data/complex/{i}/model.pdb') and os.path.isfile(f'data/complex/{i}/individual_list')]
 
@@ -150,7 +150,7 @@ def get_complex_tsv_files(complex):
     Determine required input for complex_tsv.
     Modify this function to analyse different interfaces (currently just returns A/B)
     """
-    return [f'data/complex/{complex}/A_B/interactions.tsv', f'data/complex/{complex}/A_Binterface_residues.tsv']
+    return [f'data/complex/{complex}/A_B/interactions.tsv', f'data/complex/{complex}/A_B/interface_residues.tsv']
 
 rule complex_tsv:
     """
