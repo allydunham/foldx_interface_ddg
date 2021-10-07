@@ -166,4 +166,4 @@ rule complex_tsv:
         'logs/complex_tsv.log'
 
     shell:
-        f'python bin/tsv.py {" ".join(f"data/complex/{c}/model.yaml" for c in COMPLEXES)} > {{output}} 2> {{log}}'
+        f'python bin/tsv.py {" ".join(f"data/complex/{c}/A_B" for c in COMPLEXES)} > {{output}} 2> {{log}}'
